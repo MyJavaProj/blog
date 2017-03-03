@@ -1,0 +1,68 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.blog.dao.IBlogInfoDao">
+	<insert id="create" parameterType="CM">
+     	insert into bloginfo (mark,title,content,type_number,create_time) 
+     	 values(#{mark},#{title},#{content},#{typeNumber},#{createTime})
+     </insert>
+     
+     <delete id="delete" parameterType="long">
+		delete from bloginfo where bloginfo_id=#{blogInfoId}
+	</delete>
+          
+     <update id="update" parameterType="CM">
+     	update bloginfo set mark=#{mark},title=#{title},
+     		content=#{content},type_number=#{typeNumber},create_time=#{createTime} 
+     	  	where bloginfo_id=#{blogInfoId}
+     </update>
+
+    <select id="getByUuid" parameterType="int" resultType="CM">  
+        select * from bloginfo where uuid=#{uuid}
+    </select>  
+    
+    <select id="getByCondition" parameterType="CQM" resultType="CM">  
+        select * from bloginfo
+        <where>
+        	<if test="uuid!=null &amp;&amp; uuid > 0">
+        		and uuid=#{uuid}
+        	</if>  
+        	<if test="blogInfoId &amp;&amp; blogInfoId!=''">
+        		and bloginfo_id=#{blogInfoId}
+        	</if>
+        	<if test="title &amp;&amp; title!=''">
+        		and title=#{title}
+        	</if>
+        	<if test="content!=null &amp;&amp; content!=''">
+        		and content=#{content}
+        	</if>        	
+        </where>
+    </select> 
+    
+    <select id="getByConditionPage" parameterType="CQM" resultType="CM">  
+        select * from tbl_customer
+        <where>
+        	<if test="uuid!=null &amp;&amp; uuid > 0">
+        		and uuid=#{uuid}
+        	</if>  
+        	<if test="blogInfoId!=null &amp;&amp; blogInfoId!=''">
+        		and bloginfo_id=#{blogInfoId}
+        	</if>
+        	<if test="title!=null &amp;&amp; title!=''">
+        		and title=#{title}
+        	</if>
+        	<if test="content!=null &amp;&amp; content!=''">
+        		and content=#{content}
+        	</if>         	
+        </where>
+    </select> 
+	
+	<select id="queryAll" parameterType="int" resultType="CM">
+	<!-- <select id="queryAll" parameterType="int" resultMap="BlogInfo"> -->
+		select bloginfo_id,mark,title,content,type_number,create_time from bloginfo order by  create_time desc limit #{off},#{limit}
+	</select>
+	<select id="queryById" parameterType="long" resultType="CM">
+		select bloginfo_id,mark,title,content,type_number,create_time from bloginfo where bloginfo_id = #{blogInfoId}
+	</select>
+</mapper>
