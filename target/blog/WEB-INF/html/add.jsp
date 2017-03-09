@@ -18,27 +18,25 @@ div {
 <body>
 	<!-- 页面显示部分 -->
 	<div class="container">
-	<form action="<%=path%>/add" method="post">
-		<table class="table table-hover">
-			<tr>
-				<th>mark：</th>
-				<td><input type="text" name="mark" id="blogMark"
-					placeholder="博客类型" class="form-control" /></td>
-			</tr>
+		<form action="<%=path%>/add" method="post">
+			<table class="table table-hover">
+				<tr>
+					<th>mark：</th>
+					<td><input type="text" name="mark" id="blogMark"
+						placeholder="博客类型" class="form-control" /></td>
+				</tr>
 
-			<tr>
-				<th>title：</th>
-				<td><input type="text" name="title" id="blogTitle"
-					placeholder="标题" class="form-control" /></td>
-			</tr>
-			<tr>
-				<th>content：</th>
-				<td>
-				<input type="text" name="content" id="blogContent"
-					placeholder=内容 class="form-control" />
-					</td>
-			</tr>
-			<!-- <tr>
+				<tr>
+					<th>title：</th>
+					<td><input type="text" name="title" id="blogTitle"
+						placeholder="标题" class="form-control" /></td>
+				</tr>
+				<tr>
+					<th>content：</th>
+					<td><input type="text" name="content" id="blogContent"
+						placeholder=内容 class="form-control" /></td>
+				</tr>
+				<!-- <tr>
 				<td colspan="8">
 					<div class="details">
 						<script id="editor" type="text/plain"></script>
@@ -46,14 +44,14 @@ div {
 					<input type="hidden" id="txtContent2">
 				</td>
 			</tr> -->
-			<tr>
-				<td class="tdbg" align="center" valign="bottom">
-					<button type="button" class="btn btn-info pull-right" id="btnAdd">保存</button>
-					<button type="button" class="btn btn-info pull-right"
-						id="btnCancle">取消</button> 
-				</td>
-			</tr>
-		</table>
+				<tr>
+					<td class="tdbg" align="center" valign="bottom">
+						<button type="button" class="btn btn-info pull-right" id="btnAdd">保存</button>
+						<button type="button" class="btn btn-info pull-right"
+							id="btnCancle">取消</button>
+					</td>
+				</tr>
+			</table>
 		</form>
 		<br />
 	</div>

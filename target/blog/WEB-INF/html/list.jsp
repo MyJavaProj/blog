@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!-- 引入jstl -->
-<%@include file="common/tag.jsp" %>
+<%@include file="common/tag.jsp"%>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -14,7 +14,8 @@
 		<div class="panel panel-default">
 			<div class="panel-heading text-center">
 				<h2>博客列表</h2>
-				<button type="button" class="btn btn-info pull-right">新增</button>
+				<button type="button" class="btn btn-info pull-right btn_add">新增</button>
+				<button type="button" class="btn btn-info  btn_split">分页</button>
 			</div>
 			<div class="panel-body">
 				<table class="table table-hover">
@@ -33,11 +34,10 @@
 								<td>${sk.mark}</td>
 								<td>${sk.title}</td>
 								<td>${sk.content}</td>
-								<td>
-									<fmt:formatDate value="${sk.createTime}" pattern="yyy-MM-dd HH:mm:ss"/>
-								</td>
-								<td>
-									<a class="btn btn-info" href="${basePath}blog/${sk.blogInfoId}/detail" target="_blank">link</a>
+								<td><fmt:formatDate value="${sk.createTime}"
+										pattern="yyy-MM-dd HH:mm:ss" /></td>
+								<td><a class="btn btn-info"
+									href="${basePath}blog/${sk.blogInfoId}/detail" target="_blank">link</a>
 								</td>
 							</tr>
 						</c:forEach>
@@ -50,8 +50,11 @@
 	<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 	<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
-		$(".pull-right").click(function(){
+		$(".btn_add").click(function(){
 			window.location.href = "${basePath}blog/toadd";
+		});
+		$(".btn_split").click(function(){
+			window.location.href = "${basePath}blog/splitList/0";
 		});
 	</script>
 </body>

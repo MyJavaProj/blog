@@ -7,7 +7,7 @@ public class Page <E> implements java.io.Serializable
 {
 	private static final long serialVersionUID = 1L;
 	
-	private int pageShow = 5; //每页显示多少条记录
+	private int pageShow = 10; //每页显示多少条记录
 	private int totalPage;
 	private int totalCount;
 	private int start = 1;	//默认从第一页开始
@@ -15,10 +15,10 @@ public class Page <E> implements java.io.Serializable
 	private List<E> result = Collections.emptyList();
 	
 	public int getStart() {
-		start = (getNowPage()-1)*getPageShow();
-		if(start<0){
-			start = 0;
-		}
+//		start = (getNowPage()-1)*getPageShow();
+//		if(start<0){
+//			start = 0;
+//		}
 		return start;
 	}
 	public void setStart(int start) {

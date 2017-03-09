@@ -23,8 +23,10 @@ public class BlogInfoServiceImpl implements BlogInfoService {
 	
 	@Override
 	public List<BlogInfo> getBlogInfoList() {
-		List<BlogInfo> blogInfo = blogInfoDao.queryAll(0, 10);
+//		List<BlogInfo> blogInfo = blogInfoDao.queryAll(0, 10);
 		
+		BlogInfo model = null;
+		List<BlogInfo> blogInfo = blogInfoDao.query(model);
 		System.out.println("blogInfo size:" + blogInfo.size());
 		logger.debug("===logger first in use==");
 		return blogInfo;
@@ -52,6 +54,11 @@ public class BlogInfoServiceImpl implements BlogInfoService {
 		return blogInfoDao.getByConditionPage(qm);
 	}
 
+	@Override
+	public List<BlogInfo> getSplitPages(int index,int count){
+		
+		return blogInfoDao.getSplitPages(index,count);
+	}
 //	@Override
 //	public void delete(BlogInfo model) {
 //		

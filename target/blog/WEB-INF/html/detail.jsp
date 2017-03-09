@@ -7,7 +7,7 @@
 <title>博客详情页</title>
 </head>
 <body>
-<input type="hidden" id="basePath" value="${basePath}" />
+	<input type="hidden" id="basePath" value="${basePath}" />
 	<div class="container">
 		<div class="panel panel-default text-center">
 			<div class="panel-heading">
@@ -56,11 +56,13 @@
 	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 	<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<!-- jQuery cookie操作插件 -->
-	<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+	<script
+		src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 	<!-- jQery countDonw倒计时插件  -->
-	<script src="//cdn.bootcss.com/jquery.countdown/2.1.0/jquery.countdown.min.js"></script>
+	<script
+		src="//cdn.bootcss.com/jquery.countdown/2.1.0/jquery.countdown.min.js"></script>
 	<!-- 开始编写交互逻辑 -->
-	<script src="${basePath}resources/js/seckill.js"  type="text/javascript"></script>
+	<script src="${basePath}resources/js/seckill.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		$(function(){
 			//使用EL表达式传入参数

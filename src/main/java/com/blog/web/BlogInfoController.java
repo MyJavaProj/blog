@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.apache.ibatis.annotations.Param;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.blog.Model.BlogInfoQueryModel;
+import com.blog.common.Page;
 import com.blog.dao.BlogInfoDao;
 import com.blog.entity.BlogInfo;
 import com.blog.service.BlogInfoService;
@@ -81,4 +84,28 @@ public class BlogInfoController {
 		model.addAttribute("list", list);
 		return "list";// WEB-INF/jsp/"list".jsp
 	}
+	
+	
+	@RequestMapping(value="/{pageIndex}/splitList",method=RequestMethod.GET)
+	public String splitList(@PathVariable("pageIndex") String pageIndex,
+			Model model){
+		List<BlogInfo> list = blogInfoService.getBlogInfoList();
+		int pageCount = list.size();
+		
+		BlogInfoQueryModel queryModel = new BlogInfoQueryModel();
+		Page page = new Page();
+		page.setTotalCount(pageCount);
+		page.setStart(Integer.parseInt(pageIndex));
+		
+		int startNumber = (Integer.parseInt(pageIndex)-1)*page.getPageShow();
+		int index = startNumber;
+		int count = page.getPageShow();
+		List<BlogInfo> pageList = blogInfoService.getSplitPages(index, count);
+		page.setResult(pageList);
+		
+		queryModel.setPage(page);
+		model.addAttribute("queryModel", queryModel);
+		return "splitList";
+	}
+	
 }

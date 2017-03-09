@@ -17,4 +17,6 @@ public interface BlogInfoService {
 	BlogInfo getByUuid(int uuid);
 
 	List<BlogInfo> getByConditionPage(BlogInfoQueryModel qm);
+	
+	List<BlogInfo> getSplitPages(int index,int count);
 }

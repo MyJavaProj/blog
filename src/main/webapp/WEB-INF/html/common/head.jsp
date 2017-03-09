@@ -12,9 +12,15 @@
 <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
 
 <!-- 新 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet"
+ <link rel="stylesheet"
 	href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	
+ 
+ 
+ <%-- <link type="text/css"
+	href="<%=request.getContextPath()%>/resources/bootstrap/css/bootstrap.min.css"></link>
+ <link type="text/css"
+	href="<%=request.getContextPath()%>/resources/bootstrap/css/bootstrap.theme.min.css"></link>
+ --%> 	
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>

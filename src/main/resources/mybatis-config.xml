@@ -14,9 +14,9 @@
 		<!-- 开启驼峰命名转换:Table{create_time} -> Entity{createTime} -->
 		<setting name="mapUnderscoreToCamelCase" value="true" />
 	</settings>
-	
+
 	<typeAliases>
-		<typeAlias type="com.blog.entity.BlogInfo" alias="CM"/>
-		<typeAlias type="com.blog.Model.BlogInfoQueryModel" alias="CQM"/>
+		<typeAlias type="com.blog.entity.BlogInfo" alias="CM" />
+		<typeAlias type="com.blog.Model.BlogInfoQueryModel" alias="CQM" />
 	</typeAliases>
 </configuration>
