@@ -61,9 +61,9 @@
 		</div>
 	</div>
 
-<script src= "<%=basePath%>src/main/webapp/WEB-INF/resources/js/jquery1.9.1.js"></script>
+<%-- <script src= "<%=basePath%>src/main/webapp/WEB-INF/resources/js/jquery1.9.1.js"></script> --%>
 
- 	<!-- <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> -->
+ 	<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 	<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 	<%-- <script src="<%=basePath%>resources/js/jquery1.9.1.js"></script>
