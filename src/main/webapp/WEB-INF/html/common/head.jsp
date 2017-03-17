@@ -1,11 +1,21 @@
-<%  
+<%-- <%  
     String path = request.getContextPath();  
     String basePath = request.getScheme() + "://"  
             + request.getServerName() + ":" + request.getServerPort()  
             + path + "/";  
     pageContext.setAttribute("basePath",basePath);    
+%> --%>
+<%
+    String path = request.getContextPath();
+    int port = request.getServerPort();
+    String basePath  = null;
+    if(port==80){
+        basePath = request.getScheme()+"://"+request.getServerName()+path;
+    }else{
+        basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path;
+    }
+    request.setAttribute("basePath", basePath);
 %>
-
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">

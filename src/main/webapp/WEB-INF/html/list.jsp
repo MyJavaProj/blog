@@ -88,6 +88,7 @@
 			var pageIndex = 1;
 			window.location.href = "${basePath}"+ pageIndex +"/splitList";
 		});
+		
 		// currentNum:第几页    allNum：数据总数   Count4page:每页显示多少条数据
         function PageSplit(currentNum, allNum, Count4page) {
 

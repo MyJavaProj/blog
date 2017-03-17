@@ -4,8 +4,7 @@
 
 <mapper namespace="com.blog.dao.IBlogInfoDao">
 	<insert id="create" parameterType="CM">
-		insert into bloginfo
-		(mark,title,content,type_number,create_time)
+		insert into bloginfo (mark,title,content,type_number,create_time)
 		values(#{mark},#{title},#{content},#{typeNumber},#{createTime})
 	</insert>
 
@@ -15,15 +14,13 @@
 	</delete>
 
 	<update id="update" parameterType="CM">
-		update bloginfo set
-		mark=#{mark},title=#{title},
+		update bloginfo set mark=#{mark},title=#{title},
 		content=#{content},type_number=#{typeNumber},create_time=#{createTime}
 		where bloginfo_id=#{blogInfoId}
 	</update>
 
 	<select id="getByUuid" parameterType="int" resultType="CM">
-		select *
-		from bloginfo where uuid=#{uuid}
+		select * from bloginfo where uuid=#{uuid}
 	</select>
 
 	<select id="getByCondition" parameterType="CQM" resultType="CM">
