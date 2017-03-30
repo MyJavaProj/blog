@@ -98,7 +98,7 @@
 
 		// pageIndex : 第几页， parm  查询参数
 		function pageChange(pageIndex, parm) {
-			window.location.href = "${basePath}"+ pageIndex +"/splitList";
+			window.location.href = "${basePath}/"+ pageIndex +"/splitList";
 		    /* $.ajax({
 		        type: "POST",
 		        contentType: "application/json",

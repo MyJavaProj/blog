@@ -19,6 +19,7 @@
 	<!-- 2.静态资源默认servlet配置 (1)加入对静态资源的处理：js,gif,png (2)允许使用"/"做整体映射 -->
 	<mvc:default-servlet-handler />
 	<!-- Customized View Resolver to resolve .swf, .config and .properties files -->
+	<!-- 复合视图解析器配置 -->
     <bean id="viewResolver"
           class="com.blog.common.GenericMultipleViewResolver" p:order="0">
         <property name="resolvers">
@@ -50,6 +51,7 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
+	<!-- 配置自定义视图 -->
 	<bean id="configFileView" class="com.blog.common.GenericFileView" p:contentType="text/plain" p:url="" scope="prototype"/>
 	<bean id="swfFileView" class="com.blog.common.GenericFileView" p:contentType="application/x-shockwave-flash" p:url="" scope="prototype"/>
 

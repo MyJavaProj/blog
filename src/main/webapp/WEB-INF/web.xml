@@ -2,6 +2,14 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	version="3.1" metadata-complete="true">
+	
+	<context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            classpath:applicationContext.xml
+        </param-value>
+    </context-param>
+    
 	<!-- 如果是用mvn命令生成的xml，需要修改servlet版本为3.1 -->
 	<!-- 配置DispatcherServlet -->
 	<servlet>
@@ -11,9 +19,10 @@
 			Mybatis - > spring -> springmvc -->
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath:spring/spring-*.xml</param-value>
+			<param-value>classpath:spring/spring-*.xml,classpath:dispatcherServlet.xml</param-value>
 		</init-param>
 	</servlet>
+
 	<servlet-mapping>
 		<servlet-name>blog-dispatcher</servlet-name>
 		<!-- 默认匹配所有的请求 -->
